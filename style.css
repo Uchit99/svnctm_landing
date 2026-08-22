@@ -1145,16 +1145,29 @@ a {
     .bottom {
 
         align-items:
-            flex-end;
+            center;
 
-        flex-wrap: wrap;
+        flex-direction:
+            column;
 
         gap: 14px;
+
+        text-align:
+            center;
 
     }
 
 
     .footer-links {
+
+        width:
+            100%;
+
+        justify-content:
+            center;
+
+        flex-wrap:
+            wrap;
 
         gap:
             16px;
@@ -1165,7 +1178,7 @@ a {
     .contact-link span {
 
         display:
-            none;
+            inline;
 
     }
 

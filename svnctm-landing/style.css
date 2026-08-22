@@ -1,0 +1,1213 @@
+/* =========================================
+   SVNCTM
+   CINEMATIC COMING SOON
+========================================= */
+
+:root {
+
+    --pink: #C54B8D;
+    --blush: #F7D8E6;
+    --lavender: #CFC8FF;
+
+    --cream: #FFF8F4;
+    --warm-white: #F7F5F2;
+
+    --charcoal: #2E2E2E;
+    --black: #000000;
+
+    --heading:
+        "Neue Montreal",
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+
+    --body:
+        "Avenir",
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+
+    --ease:
+        cubic-bezier(.16, 1, .3, 1);
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+
+body {
+
+    overflow: hidden;
+
+    background:
+        var(--warm-white);
+
+    color:
+        var(--charcoal);
+
+    font-family:
+        var(--body);
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================================
+   LOADER
+========================================= */
+
+.loader {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        var(--warm-white);
+
+    transition:
+        opacity 1.2s var(--ease),
+        visibility 1.2s var(--ease);
+}
+
+
+.loader.hidden {
+
+    opacity: 0;
+
+    visibility: hidden;
+}
+
+
+.loader-logo {
+
+    font-family:
+        var(--heading);
+
+    font-size:
+        clamp(3rem, 8vw, 7rem);
+
+    font-weight:
+        500;
+
+    letter-spacing:
+        -.08em;
+
+    opacity:
+        0;
+
+    transform:
+        translateY(30px);
+
+    animation:
+        loaderLogo 1.2s var(--ease)
+        forwards;
+}
+
+
+.loader-line {
+
+    width:
+        150px;
+
+    height:
+        1px;
+
+    margin-top:
+        25px;
+
+    overflow:
+        hidden;
+
+    background:
+        rgba(46,46,46,.12);
+}
+
+
+.loader-line span {
+
+    display:
+        block;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    background:
+        var(--pink);
+
+    transform:
+        translateX(-100%);
+
+    animation:
+        loaderLine 1.5s var(--ease)
+        forwards;
+}
+
+
+@keyframes loaderLogo {
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes loaderLine {
+
+    to {
+
+        transform:
+            translateX(0);
+    }
+}
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.background {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    overflow:
+        hidden;
+
+    background:
+        var(--warm-white);
+
+    z-index:
+        0;
+}
+
+
+/* =========================================
+   GLOW ORBS
+========================================= */
+
+.orb {
+
+    position:
+        absolute;
+
+    border-radius:
+        50%;
+
+    pointer-events:
+        none;
+
+    filter:
+        blur(100px);
+}
+
+
+.orb-one {
+
+    width:
+        45vw;
+
+    height:
+        45vw;
+
+    top:
+        -15vw;
+
+    right:
+        -10vw;
+
+    background:
+        rgba(247,216,230,.65);
+
+    animation:
+        orbOne 14s ease-in-out infinite;
+}
+
+
+.orb-two {
+
+    width:
+        38vw;
+
+    height:
+        38vw;
+
+    bottom:
+        -18vw;
+
+    left:
+        -10vw;
+
+    background:
+        rgba(207,200,255,.48);
+
+    animation:
+        orbTwo 18s ease-in-out infinite;
+}
+
+
+.orb-three {
+
+    width:
+        20vw;
+
+    height:
+        20vw;
+
+    top:
+        40%;
+
+    left:
+        42%;
+
+    background:
+        rgba(197,75,141,.10);
+
+    filter:
+        blur(80px);
+
+    animation:
+        orbThree 12s ease-in-out infinite;
+}
+
+
+@keyframes orbOne {
+
+    0%, 100% {
+        transform:
+            translate(0,0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translate(-80px,70px)
+            scale(1.15);
+    }
+}
+
+
+@keyframes orbTwo {
+
+    0%, 100% {
+        transform:
+            translate(0,0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translate(100px,-60px)
+            scale(1.12);
+    }
+}
+
+
+@keyframes orbThree {
+
+    0%, 100% {
+
+        transform:
+            translate(0,0)
+            scale(1);
+
+        opacity:
+            .5;
+    }
+
+    50% {
+
+        transform:
+            translate(50px,-40px)
+            scale(1.3);
+
+        opacity:
+            1;
+    }
+}
+
+
+/* =========================================
+   FILM GRAIN
+========================================= */
+
+.grain {
+
+    position:
+        fixed;
+
+    inset:
+        -50%;
+
+    width:
+        200%;
+
+    height:
+        200%;
+
+    z-index:
+        3;
+
+    pointer-events:
+        none;
+
+    opacity:
+        .035;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+
+    animation:
+        grain .25s steps(2) infinite;
+}
+
+
+@keyframes grain {
+
+    0% {
+        transform:
+            translate(0,0);
+    }
+
+    25% {
+        transform:
+            translate(2%,-1%);
+    }
+
+    50% {
+        transform:
+            translate(-1%,2%);
+    }
+
+    75% {
+        transform:
+            translate(1%,1%);
+    }
+
+    100% {
+        transform:
+            translate(-2%,-2%);
+    }
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+.landing {
+
+    position:
+        relative;
+
+    z-index:
+        5;
+
+    width:
+        100%;
+
+    height:
+        100vh;
+
+    padding:
+        32px 4vw;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        space-between;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.top {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    opacity:
+        0;
+
+    animation:
+        fadeDown 1s var(--ease)
+        2.4s forwards;
+}
+
+
+.brand {
+
+    font-family:
+        var(--heading);
+
+    font-size:
+        20px;
+
+    font-weight:
+        500;
+
+    letter-spacing:
+        -.07em;
+}
+
+
+.top-status {
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        .3em;
+
+    opacity:
+        .5;
+}
+
+
+/* =========================================
+   CENTER
+========================================= */
+
+.center {
+
+    position:
+        absolute;
+
+    top:
+        50%;
+
+    left:
+        50%;
+
+    width:
+        90%;
+
+    max-width:
+        1200px;
+
+    text-align:
+        center;
+
+    transform:
+        translate(-50%,-50%);
+}
+
+
+/* =========================================
+   SMALL BRAND
+========================================= */
+
+.brand-small {
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        .45em;
+
+    margin-bottom:
+        35px;
+
+    opacity:
+        0;
+
+    transform:
+        translateY(20px);
+
+    animation:
+        revealSmall 1s var(--ease)
+        1.9s forwards;
+}
+
+
+@keyframes revealSmall {
+
+    to {
+
+        opacity:
+            .45;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================
+   MAIN TITLE
+========================================= */
+
+.main-title {
+
+    font-family:
+        var(--heading);
+
+    font-weight:
+        500;
+
+    font-size:
+        clamp(4rem, 9.5vw, 10rem);
+
+    line-height:
+        .82;
+
+    letter-spacing:
+        -.085em;
+}
+
+
+.line {
+
+    display:
+        block;
+
+    overflow:
+        hidden;
+}
+
+
+.line-one {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(100%);
+
+    animation:
+        titleReveal 1.3s var(--ease)
+        2.1s forwards;
+}
+
+
+.line-two {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(100%);
+
+    animation:
+        titleReveal 1.3s var(--ease)
+        2.3s forwards;
+}
+
+
+@keyframes titleReveal {
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+.pink {
+
+    color:
+        var(--pink);
+
+    transition:
+        letter-spacing .7s var(--ease),
+        color .7s ease;
+}
+
+
+.main-title:hover .pink {
+
+    letter-spacing:
+        -.04em;
+
+    color:
+        #b13c7b;
+}
+
+
+/* =========================================
+   COMING SOON
+========================================= */
+
+.coming {
+
+    margin-top:
+        55px;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    gap:
+        20px;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        .35em;
+
+    opacity:
+        0;
+
+    animation:
+        comingReveal 1s var(--ease)
+        2.8s forwards;
+}
+
+
+.coming-line {
+
+    width:
+        45px;
+
+    height:
+        1px;
+
+    background:
+        var(--charcoal);
+
+    opacity:
+        .2;
+}
+
+
+@keyframes comingReveal {
+
+    from {
+
+        opacity:
+            0;
+
+        filter:
+            blur(10px);
+
+        transform:
+            translateY(15px);
+    }
+
+    to {
+
+        opacity:
+            .55;
+
+        filter:
+            blur(0);
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.message {
+
+    margin-top:
+        22px;
+
+    font-size:
+        13px;
+
+    letter-spacing:
+        .02em;
+
+    opacity:
+        0;
+
+    animation:
+        messageReveal 1.2s var(--ease)
+        3.1s forwards;
+}
+
+
+@keyframes messageReveal {
+
+    from {
+
+        opacity:
+            0;
+
+        filter:
+            blur(8px);
+
+        transform:
+            translateY(12px);
+    }
+
+    to {
+
+        opacity:
+            .55;
+
+        filter:
+            blur(0);
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================
+   BOTTOM
+========================================= */
+
+.bottom {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        .15em;
+
+    opacity:
+        0;
+
+    animation:
+        fadeUp 1s var(--ease)
+        3.3s forwards;
+}
+
+
+.copyright {
+
+    opacity:
+        .45;
+}
+
+
+/* =========================================
+   INSTAGRAM BUTTON
+========================================= */
+
+.instagram {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    padding:
+        10px 16px;
+
+    border:
+        1px solid
+        rgba(46,46,46,.14);
+
+    border-radius:
+        50px;
+
+    background:
+        rgba(255,255,255,.18);
+
+    backdrop-filter:
+        blur(12px);
+
+    -webkit-backdrop-filter:
+        blur(12px);
+
+    transition:
+        color .5s ease,
+        background .5s ease,
+        border-color .5s ease,
+        transform .5s var(--ease);
+}
+
+
+/* THE INSTAGRAM LOGO */
+
+.instagram-icon {
+
+    width:
+        18px;
+
+    height:
+        18px;
+
+    flex-shrink:
+        0;
+
+    transition:
+        transform .6s var(--ease);
+}
+
+
+/* USERNAME */
+
+.instagram-text {
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        .16em;
+
+}
+
+
+/* ARROW */
+
+.instagram-arrow {
+
+    font-size:
+        13px;
+
+    opacity:
+        .5;
+
+    transition:
+        transform .5s var(--ease);
+}
+
+
+/* HOVER */
+
+.instagram:hover {
+
+    color:
+        var(--pink);
+
+    background:
+        rgba(247,216,230,.4);
+
+    border-color:
+        rgba(197,75,141,.35);
+
+    transform:
+        translateY(-3px);
+}
+
+
+.instagram:hover .instagram-icon {
+
+    transform:
+        rotate(8deg)
+        scale(1.12);
+}
+
+
+.instagram:hover .instagram-arrow {
+
+    transform:
+        translate(3px,-3px);
+}
+
+
+/* =========================================
+   GENERAL ANIMATIONS
+========================================= */
+
+@keyframes fadeDown {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(-15px);
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(15px);
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .landing {
+
+        padding:
+            25px 6vw;
+    }
+
+
+    .brand {
+
+        font-size:
+            18px;
+    }
+
+
+    .top-status {
+
+        font-size:
+            7px;
+    }
+
+
+    .center {
+
+        width:
+            92%;
+    }
+
+
+    .brand-small {
+
+        margin-bottom:
+            25px;
+    }
+
+
+    .main-title {
+
+        font-size:
+            clamp(3.3rem,16vw,7rem);
+
+        line-height:
+            .85;
+    }
+
+
+    .coming {
+
+        margin-top:
+            38px;
+
+        gap:
+            12px;
+
+        font-size:
+            7px;
+    }
+
+
+    .coming-line {
+
+        width:
+            25px;
+    }
+
+
+    .message {
+
+        font-size:
+            11px;
+
+        margin-top:
+            18px;
+    }
+
+
+    .bottom {
+
+        font-size:
+            7px;
+    }
+
+
+    .instagram {
+
+        padding:
+            8px 12px;
+
+        gap:
+            8px;
+    }
+
+
+    .instagram-icon {
+
+        width:
+            16px;
+
+        height:
+            16px;
+    }
+
+
+    .instagram-text {
+
+        font-size:
+            7px;
+    }
+
+
+    .orb-one {
+
+        width:
+            80vw;
+
+        height:
+            80vw;
+    }
+
+
+    .orb-two {
+
+        width:
+            70vw;
+
+        height:
+            70vw;
+    }
+
+
+    .orb-three {
+
+        width:
+            50vw;
+
+        height:
+            50vw;
+    }
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 400px) {
+
+    .main-title {
+
+        font-size:
+            14vw;
+    }
+
+
+    .coming {
+
+        margin-top:
+            30px;
+    }
+
+
+    .message {
+
+        font-size:
+            10px;
+    }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            .01ms !important;
+    }
+}

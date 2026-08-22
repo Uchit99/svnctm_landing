@@ -1,133 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <meta
         name="description"
-        content="SVNCTM — Every Space, a Sanctum. Coming Soon."
+        content="SVNCTM — Every Space, a Sanctum. A new feeling is taking shape."
     >
 
-    <meta name="theme-color" content="#F7F5F2">
+    <meta
+        name="theme-color"
+        content="#F7F5F2"
+    >
+
+    <!-- =========================================
+         SVNCTM LOGO / BROWSER TAB ICON
+    ========================================== -->
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="logo/logo.png"
+    >
+
+    <link
+        rel="shortcut icon"
+        type="image/png"
+        href="logo/logo.png"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="logo/logo.png"
+    >
+
 
     <title>SVNCTM — Every Space, a Sanctum.</title>
 
-    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
 </head>
+
 
 <body>
 
-    <!-- ==============================
-         LOADER
-    =============================== -->
 
-    <div class="loader" id="loader">
+    <!-- =========================================
+         LOADING SCREEN
+    ========================================== -->
 
-        <div class="loader-logo">
-            SVNCTM
-        </div>
+    <div
+        class="loader"
+        id="loader"
+    >
 
-        <div class="loader-line">
-            <span></span>
+        <div class="loader-content">
+
+            <!-- REAL SVNCTM LOGO -->
+
+            <img
+                src="logo/logo.png"
+                alt="SVNCTM"
+                class="loading-logo"
+            >
+
+
+            <div class="loader-line">
+
+                <span></span>
+
+            </div>
+
         </div>
 
     </div>
 
 
-    <!-- ==============================
+
+    <!-- =========================================
          BACKGROUND
-    =============================== -->
+    ========================================== -->
 
     <div class="background">
 
         <div class="orb orb-one"></div>
+
         <div class="orb orb-two"></div>
+
         <div class="orb orb-three"></div>
 
+        <div class="orb orb-four"></div>
+
     </div>
+
+
+    <!-- FILM GRAIN -->
 
     <div class="grain"></div>
 
 
-    <!-- ==============================
-         MAIN
-    =============================== -->
+
+    <!-- =========================================
+         MAIN WEBSITE
+    ========================================== -->
 
     <main class="landing">
 
-        <!-- TOP -->
+
+        <!-- =====================================
+             HEADER
+        ====================================== -->
 
         <header class="top">
 
-            <div class="brand">
-                SVNCTM
-            </div>
+
+            <!-- REAL LOGO -->
+
+            <a
+                href="/"
+                class="brand"
+                aria-label="SVNCTM Home"
+            >
+
+                <img
+                    src="logo/logo.png"
+                    alt="SVNCTM"
+                    class="header-logo"
+                >
+
+            </a>
+
 
             <div class="top-status">
+
                 COMING SOON
+
             </div>
+
 
         </header>
 
 
-        <!-- CENTER -->
+
+        <!-- =====================================
+             CENTER
+        ====================================== -->
 
         <section class="center">
 
-            <div class="brand-small">
-                SVNCTM
-            </div>
+
+            <!-- NO SMALL SVNCTM TEXT HERE -->
 
 
             <h1 class="main-title">
 
-                <span class="line line-one">
+
+                <span class="title-line line-one">
+
                     EVERY SPACE,
+
                 </span>
 
-                <span class="line line-two">
+
+                <span class="title-line line-two">
+
                     <span class="pink">
-                        SANCTUM.
+
+                        A SANCTUM.
+
                     </span>
+
                 </span>
+
 
             </h1>
 
 
+
+            <!-- COMING SOON -->
+
             <div class="coming">
 
+
                 <span class="coming-line"></span>
 
-                <span>
+
+                <span class="coming-text">
+
                     COMING SOON
+
                 </span>
 
+
                 <span class="coming-line"></span>
+
 
             </div>
 
 
+
+            <!-- MESSAGE -->
+
             <p class="message">
+
                 A new feeling is taking shape.
+
             </p>
+
 
         </section>
 
 
-        <!-- ==============================
-             BOTTOM
-        =============================== -->
+
+        <!-- =====================================
+             FOOTER
+        ====================================== -->
 
         <footer class="bottom">
 
+
             <span class="copyright">
+
                 © 2026 SVNCTM
+
             </span>
 
 
-            <!-- INSTAGRAM -->
+
+            <!-- =================================
+                 INSTAGRAM
+            ================================== -->
 
             <a
                 href="https://www.instagram.com/svnctm/"
@@ -137,15 +250,14 @@
                 aria-label="Visit SVNCTM on Instagram"
             >
 
-                <!-- Instagram SVG Logo -->
+
+                <!-- INSTAGRAM SVG LOGO -->
 
                 <svg
                     class="instagram-icon"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                 >
-
-                    <!-- Outer rounded square -->
 
                     <rect
                         x="3"
@@ -158,7 +270,6 @@
                         stroke-width="1.6"
                     />
 
-                    <!-- Camera lens -->
 
                     <circle
                         cx="12"
@@ -169,7 +280,6 @@
                         stroke-width="1.6"
                     />
 
-                    <!-- Camera dot -->
 
                     <circle
                         cx="17.4"
@@ -182,22 +292,31 @@
 
 
                 <span class="instagram-text">
+
                     @svnctm
+
                 </span>
 
 
                 <span class="instagram-arrow">
+
                     ↗
+
                 </span>
+
 
             </a>
 
+
         </footer>
 
+
     </main>
+
 
 
     <script src="script.js"></script>
 
 </body>
+
 </html>

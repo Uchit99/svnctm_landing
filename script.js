@@ -1,11 +1,11 @@
 /* ==================================================
    SVNCTM
-   CINEMATIC LANDING PAGE
+   LANDING PAGE JAVASCRIPT
 ================================================== */
 
 
 /* ==================================================
-   LOADER
+   LOADING SCREEN
 ================================================== */
 
 window.addEventListener("load", () => {
@@ -92,27 +92,29 @@ if (!isTouchDevice) {
 
 
         currentX +=
-            (mouseX - currentX) * 0.04;
+            (mouseX - currentX) *
+            0.04;
 
 
         currentY +=
-            (mouseY - currentY) * 0.04;
+            (mouseY - currentY) *
+            0.04;
 
 
 
-        /* MAIN CONTENT */
+        /* HERO MOVEMENT */
 
         center.style.transform =
             `
             translate(
-                calc(-50% + ${currentX * -6}px),
-                calc(-50% + ${currentY * -6}px)
+                calc(-50% + ${currentX * -5}px),
+                calc(-50% + ${currentY * -5}px)
             )
             `;
 
 
 
-        /* BACKGROUND */
+        /* BACKGROUND MOVEMENT */
 
         orbOne.style.marginLeft =
             `${currentX * 18}px`;

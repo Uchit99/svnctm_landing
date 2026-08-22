@@ -651,9 +651,9 @@ a {
 
     gap: 8px;
 
-    margin-bottom: 18px;
+    margin-bottom: 12px;
 
-    font-size: 16px;
+    font-size: 18px;
 
     font-weight: 600;
 
@@ -716,7 +716,7 @@ a {
         var(--heading);
 
     font-size:
-        clamp(4rem, 7.3vw, 8rem);
+        clamp(3.25rem, 6vw, 6.75rem);
 
     font-weight:
         500;
@@ -799,7 +799,7 @@ a {
 .message {
 
     margin-top:
-        34px;
+        20px;
 
     max-width:
         500px;
@@ -1081,10 +1081,10 @@ a {
     .coming-label {
 
         margin-bottom:
-            14px;
+            10px;
 
         font-size:
-            12px;
+            14px;
 
         letter-spacing:
             .22em;
@@ -1095,7 +1095,7 @@ a {
     .main-title {
 
         font-size:
-            clamp(3rem, 13vw, 6rem);
+            clamp(2.6rem, 11vw, 5rem);
 
         line-height:
             .88;
@@ -1109,7 +1109,7 @@ a {
     .message {
 
         margin-top:
-            25px;
+            18px;
 
         font-size:
             13px;
@@ -1175,7 +1175,7 @@ a {
     .main-title {
 
         font-size:
-            14vw;
+            12vw;
 
     }
 
@@ -1183,7 +1183,7 @@ a {
     .coming-label {
 
         font-size:
-            10px;
+            11px;
 
     }
 

@@ -1,31 +1,32 @@
-/* =========================================
+/* ==================================================
    SVNCTM
-   CINEMATIC ANIMATION
-========================================= */
+   CINEMATIC LANDING PAGE
+================================================== */
 
 
-/* =========================================
+/* ==================================================
    LOADER
-========================================= */
+================================================== */
 
 window.addEventListener("load", () => {
 
     const loader =
         document.getElementById("loader");
 
+
     setTimeout(() => {
 
         loader.classList.add("hidden");
 
-    }, 1700);
+    }, 1500);
 
 });
 
 
 
-/* =========================================
+/* ==================================================
    MOUSE PARALLAX
-========================================= */
+================================================== */
 
 const isTouchDevice =
     window.matchMedia(
@@ -35,24 +36,36 @@ const isTouchDevice =
 
 if (!isTouchDevice) {
 
+
     const center =
         document.querySelector(".center");
+
 
     const orbOne =
         document.querySelector(".orb-one");
 
+
     const orbTwo =
         document.querySelector(".orb-two");
+
 
     const orbThree =
         document.querySelector(".orb-three");
 
 
+    const orbFour =
+        document.querySelector(".orb-four");
+
+
     let mouseX = 0;
+
     let mouseY = 0;
 
+
     let currentX = 0;
+
     let currentY = 0;
+
 
 
     window.addEventListener(
@@ -64,6 +77,7 @@ if (!isTouchDevice) {
                     window.innerWidth) -
                 0.5;
 
+
             mouseY =
                 (event.clientY /
                     window.innerHeight) -
@@ -73,14 +87,20 @@ if (!isTouchDevice) {
     );
 
 
+
     function animateParallax() {
+
 
         currentX +=
             (mouseX - currentX) * 0.04;
 
+
         currentY +=
             (mouseY - currentY) * 0.04;
 
+
+
+        /* MAIN CONTENT */
 
         center.style.transform =
             `
@@ -90,6 +110,9 @@ if (!isTouchDevice) {
             )
             `;
 
+
+
+        /* BACKGROUND */
 
         orbOne.style.marginLeft =
             `${currentX * 18}px`;
@@ -112,9 +135,17 @@ if (!isTouchDevice) {
             `${currentY * 8}px`;
 
 
+        orbFour.style.marginLeft =
+            `${currentX * -6}px`;
+
+        orbFour.style.marginTop =
+            `${currentY * -6}px`;
+
+
         requestAnimationFrame(
             animateParallax
         );
+
     }
 
 
